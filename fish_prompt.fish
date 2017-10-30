@@ -51,11 +51,17 @@ function __ruby_version
   echo -n (set_color red) ‹$ruby_version› (set_color normal)
 end
 
+function __virtualenv_name
+    if set -q VIRTUEL_ENV
+        echo -n (set_color red) "‹" (basename "$VIRTUAL_ENV") "›" (set_color normal) 
+    end
+end
+
 function fish_prompt
   echo -n (set_color white)"╭─"(set_color normal)
   __user_host
   __current_path
-  __ruby_version
+  __virtualenv_name
   __git_status
   echo -e ''
   echo (set_color white)"╰─"(set_color --bold white)"\$ "(set_color normal)
