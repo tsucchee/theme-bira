@@ -52,7 +52,7 @@ function __ruby_version
 end
 
 function __virtualenv_name
-    if set -q VIRTUEL_ENV
+    if set -q VIRTUAL_ENV
         echo -n (set_color red) "‹" (basename "$VIRTUAL_ENV") "›" (set_color normal) 
     end
 end
